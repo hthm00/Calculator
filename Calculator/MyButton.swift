@@ -42,7 +42,9 @@ class MyButton: UIButton{
     
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? myIsHighLightedColor : myBackgroundColor
+            UIView.animate(withDuration: 0.5) {
+                self.backgroundColor = self.isHighlighted ? self.myIsHighLightedColor : self.myBackgroundColor
+            }
         }
     }
 }
